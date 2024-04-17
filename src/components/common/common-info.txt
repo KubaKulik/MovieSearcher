@@ -1,0 +1,1 @@
+W folderze common będziemy przechowywać proste komponenty uniwersalne. Takie, których tematyka nie jest bezpośrednio związana w tym konkretnym projektem i będą wykorzystywane w wielu różnych miejscach w aplikacji (np. komponenty Button, TextInput itd.).

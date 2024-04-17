@@ -1,0 +1,1 @@
+views to katalog na proste komponenty widoki, a więc takie, które tylko coś renderują. Być może przyjmują nawet jakieś informacje w formie parametrów, ale nie ma w nich żadnej logiki. Nie znajdziemy tu stanu lokalnego czy połączenia z magazynem.
