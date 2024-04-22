@@ -1,5 +1,13 @@
-.register{
-    background-color: blue;
-    width: 100%;
-    height: 20%;
+.register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .registerForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
