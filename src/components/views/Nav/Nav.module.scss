@@ -1,0 +1,19 @@
+@import "../../../styles/setting.scss";
+
+.nav {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  background-color: $dark;
+  padding: 0 100px;
+
+  .navItem {
+    padding: 30px 50px;
+  }
+
+  .navItem:hover{
+    background-color: $light;
+    color: black;
+  }
+}
+
