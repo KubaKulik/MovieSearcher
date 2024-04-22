@@ -1,3 +1,4 @@
+
 import styles from './Register.module.scss';
 
 const Register = () => {
