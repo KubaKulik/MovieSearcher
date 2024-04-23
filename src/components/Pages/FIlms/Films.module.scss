@@ -10,4 +10,10 @@
     align-items: center;
     flex-direction: column;
   }
+
+  .filmsResults{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 }
