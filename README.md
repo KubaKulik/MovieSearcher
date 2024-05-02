@@ -1,3 +1,56 @@
+# Backend
+
+<img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue"/> <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white"/> 
+
+## Backend brief
+
+Python + MySQL
+
+Backend includes:
+
+* User registration and database enrollment ✅.
+* User login ✅.
+* user password change ✅.
+* creation/renewal of account access token ✅.
+
+Authentication and authorization:
+* JWT ✅
+
+
+## Installation
+
+Install requirements
+
+```bash
+  pip install requirements.txt
+```
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`ACCESS_TOKEN_EXPIRE_MINUTES`
+`REFRESH_TOKEN_EXPIRE_MINUTES` 
+`ALGORITHM` 
+`JWT_SECRET_KEY` 
+`JWT_REFRESH_SECRET_KEY` 
+`DATABASE_URL`
+
+## Run Locally
+
+```bash
+  cd backend
+```
+
+```bash
+  uvicorn main:app
+```
+
+# SwaggerUI
+
+![SwaggerUI](/backend/docs/swagger.PNG)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
