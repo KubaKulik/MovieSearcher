@@ -2,7 +2,7 @@
 
 <img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue"/> <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white"/> 
 
-## Backend brief
+## A brief description:
 
 Python + MySQL
 
@@ -30,11 +30,17 @@ Install requirements
 To run this project, you will need to add the following environment variables to your .env file
 
 `ACCESS_TOKEN_EXPIRE_MINUTES`
+
 `REFRESH_TOKEN_EXPIRE_MINUTES` 
+
 `ALGORITHM` 
+
 `JWT_SECRET_KEY` 
+
 `JWT_REFRESH_SECRET_KEY` 
+
 `DATABASE_URL`
+
 
 ## Run Locally
 
