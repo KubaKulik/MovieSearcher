@@ -1,14 +1,14 @@
-import backend.models.schemas as schemas
-import backend.models.tables as tables
-from backend.models.tables import User,TokenTable
+import models.schemas as schemas
+import models.tables as tables
+from models.tables import User,TokenTable
 import jwt
 from datetime import datetime 
-from backend.core.database import Base, engine, SessionLocal
+from core.database import Base, engine, SessionLocal
 from sqlalchemy.orm import Session
 from fastapi import FastAPI, Depends, HTTPException,status
-from backend.security.auth_bearer import JWTBearer
+from security.auth_bearer import JWTBearer
 from functools import wraps
-from backend.security.utils import create_access_token,create_refresh_token,verify_password,get_hashed_password
+from security.utils import create_access_token,create_refresh_token,verify_password,get_hashed_password
 from dotenv import load_dotenv
 import os
 
