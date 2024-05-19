@@ -1,7 +1,7 @@
-import React from "react"; // Dodano import React
+import React from "react"; 
 import styles from "./FilmCard.module.scss";
 
-const FilmCard = ({ result }) => { // Zdekstrukturyzowano propsy, aby uzyskać dostęp do właściwości result
+const FilmCard = ({ result }) => { 
   return (
     <div className={styles.card}>
       <div className={styles.cardImage}>

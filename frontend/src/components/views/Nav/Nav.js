@@ -1,13 +1,21 @@
 import { NavLink } from 'react-router-dom';
 import styles from './Nav.module.scss';
 
-const Nav = () => {
-  return(
+const Nav = ({ loggedIn }) => {
+  return (
     <nav className={styles.nav}>
-      <NavLink className={styles.navItem} to="/Login/"> Login </NavLink>
-      <NavLink className={styles.navItem} to="/Register/"> Register </NavLink>
-      <NavLink className={styles.navItem} to="/Films/"> Films </NavLink>
-    </nav >
+      {loggedIn ? (
+        <>
+          <NavLink className={styles.navItem} to="/films">Films</NavLink>
+          <NavLink className={styles.navItem} to="/logout">Logout</NavLink>
+        </>
+      ) : (
+        <>
+          <NavLink className={styles.navItem} to="/login">Login</NavLink>
+          <NavLink className={styles.navItem} to="/register">Register</NavLink>
+        </>
+      )}
+    </nav>
   );
 };
 

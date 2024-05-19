@@ -11,8 +11,10 @@ from functools import wraps
 from security.utils import create_access_token,create_refresh_token,verify_password,get_hashed_password
 from dotenv import load_dotenv
 import os
+from fastapi.middleware.cors import CORSMiddleware
 
 load_dotenv('.env')
+
 
 ALGORITHM = os.getenv('ALGORITHM')
 JWT_SECRET_KEY = os.getenv('JWT_SECRET_KEY')
@@ -29,6 +31,14 @@ def get_session():
     finally:
         session.close()
 app=FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allow_headers=["*"],
+)
 
 @app.post("/register")
 def register_user(user: schemas.UserCreate, session: Session = Depends(get_session)):

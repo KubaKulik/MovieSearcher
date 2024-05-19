@@ -24,7 +24,7 @@ const Films = () => {
         .then((res) => {
           console.log(res.data.Search);
           setState((prevState) => {
-            return { ...prevState, results: res.data.Search || [] }; // Dodane sprawdzenie czy istnieją wyniki
+            return { ...prevState, results: res.data.Search || [] }; 
           });
         })
         .catch((err) => console.log(err));
