@@ -1,15 +1,21 @@
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; 
-import styles from './Login.module.scss';
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import styles from "./Login.module.scss";
+import { NavLink } from "react-router-dom";
+import {
+  FaUser,
+  FaLock,
+} from "react-icons/fa";
 
 const Login = ({ setLoggedIn }) => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const navigate = useNavigate(); 
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
-    setUsername('');
-    setPassword('');
+    setUsername("");
+    setPassword("");
   }, []);
 
   const handleSubmit = async (e) => {
@@ -17,40 +23,73 @@ const Login = ({ setLoggedIn }) => {
 
     const data = {
       username: username,
-      password: password
+      password: password,
     };
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/login', {
-        method: 'POST',
+      const response = await fetch("http://127.0.0.1:8000/login", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
       });
       if (response.ok) {
-        console.log('Logged in successfully');
+        console.log("Logged in successfully");
+        setMessage("Logged in successfully")
         setLoggedIn(true);
-        navigate('/films'); 
+        navigate("/films");
       } else {
-        console.error('Login error');
+        console.error("Login error");
+        setMessage("Please enter correct details")
       }
     } catch (error) {
-      console.error('An error occurred while sending the request:', error);
+      console.error("An error occurred while sending the request:", error);
+      setMessage("An error occurred while sending the request")
     }
   };
 
   return (
     <div className={styles.login}>
-      <h2>Logowanie</h2>
       <form className={styles.loginForm} onSubmit={handleSubmit}>
-        <label htmlFor="username">Nazwa użytkownika:</label>
-        <input type="text" id="username" name="username" placeholder="Wprowadź nazwę użytkownika" value={username} onChange={(e) => setUsername(e.target.value)} />
-        
-        <label htmlFor="password">Hasło:</label>
-        <input type="password" id="password" name="password" placeholder="Wprowadź hasło" value={password} onChange={(e) => setPassword(e.target.value)} />
-        
-        <input type="submit" value="Zaloguj się" />
+        <h2>Login</h2>
+        <label htmlFor="username">Username:</label>
+        <div className={styles.inputWithIcon}>
+          <FaUser className={styles.icon} />
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Enter your login"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </div>
+
+        <label htmlFor="password">Password:</label>
+        <div className={styles.inputWithIcon}>
+          <FaLock className={styles.icon} />
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+
+        <NavLink className={styles.navItem} to="/forgot-password">
+          Forgot password?
+        </NavLink>
+
+        <input type="submit" value="Log in" />
+
+        <NavLink className={styles.navItem} to="/register">
+          Create account
+        </NavLink>
+
+        {message && <p className={styles.message}>{message}</p>}
       </form>
     </div>
   );

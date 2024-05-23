@@ -2,18 +2,37 @@
 
 .nav {
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   align-items: center;
-  background-color: $dark;
-  padding: 0 100px;
+  padding: 20px 50px;
+
+  .logoSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+
+    .logo{
+     margin: 0 10px;
+     color:#1abc9c;
+     font-size: 50px;
+    }
+
+    .colored{
+      color:#1abc9c;
+    }
+  }
 
   .navItem {
-    padding: 30px 50px;
+    padding: 10px 50px;
+    border-radius: 4px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
   }
 
   .navItem:hover{
-    background-color: $light;
-    color: black;
+    background-color: #1abc9c;
+    color: white;
   }
 }
 
