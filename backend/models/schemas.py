@@ -16,8 +16,8 @@ class TokenSchema(BaseModel):
 
 class changepassword(BaseModel):
     username:str
-    old_password:str
     new_password:str
+    repeat_new_password:str
 
 class TokenCreate(BaseModel):
     user_id:str

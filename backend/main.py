@@ -36,7 +36,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
     allow_credentials=True,
-    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allow_methods=["POST", "PUT", "OPTIONS"],
     allow_headers=["*"],
 )
 
@@ -81,19 +81,22 @@ def login(request: schemas.requestdetails, db: Session = Depends(get_session)):
         "refresh_token": refresh,
     }
 
-@app.post('/change-password')
+@app.put('/forgot-password')
 def change_password(request: schemas.changepassword, db: Session = Depends(get_session)):
     user = db.query(tables.User).filter(tables.User.username == request.username).first()
     if user is None:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="User not found")
     
-    if not verify_password(request.old_password, user.password):
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid old password")
+    if request.new_password != request.repeat_new_password:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Passwords do not match")
+    
+    if not verify_password(request.new_password, user.password):
+       print(verify_password(request.new_password, user.password))
+       raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid old password")
     
     encrypted_password = get_hashed_password(request.new_password)
     user.password = encrypted_password
     db.commit()
-
     
     return {"message": "Password changed successfully"}
 
@@ -105,7 +108,6 @@ def logout(dependencies=Depends(JWTBearer()), db: Session = Depends(get_session)
     token_record = db.query(tables.TokenTable).all()
     info=[]
     for record in token_record :
-        print("record",record)
         if (datetime.utcnow() - record.created_date).days >1:
             info.append(record.user_id)
     if info:
