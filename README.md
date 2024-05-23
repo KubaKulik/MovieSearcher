@@ -10,8 +10,8 @@ Backend includes:
 
 * User registration and database enrollment ✅.
 * User login ✅.
-* user password change ✅.
-* creation/renewal of account access token ✅.
+* User password change ✅.
+* Creation/renewal of account access token ✅.
 
 Authentication and authorization:
 * JWT ✅
@@ -58,6 +58,8 @@ To run this project, you will need to add the following environment variables to
 
 
 # Frontend
+
+<img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)/>
 
 ## Installation
 
