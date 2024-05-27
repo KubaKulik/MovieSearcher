@@ -78,3 +78,11 @@ Project start
 ```bash
   npm start
 ```
+
+# Automatically Backend + Frontend 
+
+**Automatic** inclusion of **backend** and **frontend** on separate windows:
+
+```bash
+  ./script.ps1
+```
