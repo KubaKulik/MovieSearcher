@@ -1,3 +1,14 @@
+# MovieSearcher
+
+**MovieSearcher** is a web application that allows users to search for movies based on name.
+After searching for a movie, users can see its basic information, such as title, genre and release date. 
+The application has panels for **registration**, **log-in**, **change password**. **Logout** and **find movies**.
+Movies are downloaded from an open API from **http://www.omdbapi.com**. User after registration is saved in **MySQL** databases. 
+The application provides security through authentication based on **JWT tokens**.
+In addition, there is a mechanism to automatically log out a user after a certain period of inactivity.
+The application is also equipped with a simple token management system,
+which allows access tokens to be invalidated after a user logs out or after a certain amount of time has passed since they were generated.
+
 # Backend
 
 <img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue"/> <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white"/> 
