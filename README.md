@@ -61,8 +61,13 @@ To run this project, you will need to add the following environment variables to
 
 <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)"/>
 
-## Installation
+## Environment Variables
 
+To run this project, you will need to add the following environment variables to your .env file
+
+`REACT_APP_API_KEY`
+
+## Installation
 
 ```bash
   cd frontend
@@ -73,6 +78,9 @@ npm install
 ```bash
   npm i
 ```
+
+## Run Locally
+
 Project start
 
 ```bash
