@@ -14,7 +14,7 @@ function App() {
     <main>
       <Nav loggedIn={loggedIn} />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home/>} />
         <Route path="/login" element={<Login setLoggedIn={setLoggedIn} />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
