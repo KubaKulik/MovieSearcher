@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./ForgotPassword.module.scss";
 import { NavLink } from "react-router-dom";
-import { IoIosMail } from "react-icons/io";
+import {
+  FaUser,
+  FaLock,
+} from "react-icons/fa";
 
 const ForgotPassword = () => {
   const [username, setUsername] = useState("");
@@ -51,7 +54,7 @@ const ForgotPassword = () => {
       <form className={styles.forgotPasswordForm} onSubmit={handleSubmit}>
         <h2>Forgot password</h2>
         <div className={styles.inputWithIcon}>
-          <IoIosMail className={styles.icon} />
+          <FaUser className={styles.icon} />
           <input
             type="text"
             id="username"
@@ -62,7 +65,7 @@ const ForgotPassword = () => {
           />
         </div>
         <div className={styles.inputWithIcon}>
-          <IoIosMail className={styles.icon} />
+          <FaLock className={styles.icon} />
           <input
             type="password"
             id="password"
@@ -73,7 +76,7 @@ const ForgotPassword = () => {
           />
         </div>
         <div className={styles.inputWithIcon}>
-          <IoIosMail className={styles.icon} />
+          <FaLock className={styles.icon} />
           <input
             type="password"
             id="repeatPassword"
