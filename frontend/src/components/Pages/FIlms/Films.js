@@ -7,7 +7,7 @@ const Films = () => {
   const [state, setState] = useState({
     search: "",
     results: [],
-    searched: false, // Nowa wartość stanu informująca, czy wykonano wyszukiwanie
+    searched: false, 
   });
 
   const handleInput = (event) => {
@@ -16,10 +16,9 @@ const Films = () => {
       return { ...prevState, search: search };
     });
   };
-
   const searchForFilms = () => {
     axios
-      .get(`http://www.omdbapi.com/?i=tt3896198&apikey=618cb116&s=${state.search}`)
+      .get(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${state.search}`)
       .then((res) => {
         console.log(res.data.Search);
         setState((prevState) => {
