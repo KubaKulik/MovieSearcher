@@ -90,9 +90,6 @@ def change_password(request: schemas.changepassword, db: Session = Depends(get_s
     if request.new_password != request.repeat_new_password:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Passwords do not match")
     
-    if not verify_password(request.new_password, user.password):
-       raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid old password")
-    
     encrypted_password = get_hashed_password(request.new_password)
     user.password = encrypted_password
     db.commit()
