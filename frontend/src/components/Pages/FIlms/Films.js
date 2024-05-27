@@ -7,6 +7,7 @@ const Films = () => {
   const [state, setState] = useState({
     search: "",
     results: [],
+    searched: false, // Nowa wartość stanu informująca, czy wykonano wyszukiwanie
   });
 
   const handleInput = (event) => {
@@ -16,18 +17,24 @@ const Films = () => {
     });
   };
 
-  const SearchResult = (event) => {
+  const searchForFilms = () => {
+    axios
+      .get(`http://www.omdbapi.com/?i=tt3896198&apikey=618cb116&s=${state.search}`)
+      .then((res) => {
+        console.log(res.data.Search);
+        setState((prevState) => {
+          return { ...prevState, results: res.data.Search || [], searched: true };
+        });
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const handleKeyPress = (event) => {
     if (event.key === "Enter") {
       event.preventDefault();
-      axios
-        .get(`http://www.omdbapi.com/?i=tt3896198&apikey=618cb116&s=${state.search}`)
-        .then((res) => {
-          console.log(res.data.Search);
-          setState((prevState) => {
-            return { ...prevState, results: res.data.Search || [] }; 
-          });
-        })
-        .catch((err) => console.log(err));
+      if (state.search.trim() !== "") {
+        searchForFilms();
+      }
     }
   };
 
@@ -40,16 +47,17 @@ const Films = () => {
           name="search"
           placeholder="Search Movie..."
           onChange={handleInput}
-          onKeyDown={SearchResult}
+          onKeyPress={handleKeyPress}
         />
       </form>
       <div className={styles.filmsResults}>
-        {state.results.length > 0 ? (
+        {state.searched && state.results.length === 0 && (
+          <p>No results found.</p>
+        )}
+        {state.results.length > 0 && ( 
           state.results.map((result, i) => (
             <FilmCard key={i} result={result} />
           ))
-        ) : (
-          <p>No results found.</p>
         )}
       </div>
     </div>
