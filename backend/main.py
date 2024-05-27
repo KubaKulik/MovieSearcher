@@ -46,7 +46,7 @@ def register_user(user: schemas.UserCreate, session: Session = Depends(get_sessi
     if existing_user:
         raise HTTPException(status_code=400, detail="Username already registered")
 
-    encrypted_password =get_hashed_password(user.password)
+    encrypted_password = get_hashed_password(user.password)
 
     new_user = tables.User(username=user.username, email=user.email, password=encrypted_password )
 
