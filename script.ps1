@@ -13,4 +13,5 @@ Write-Output "Starting the frontend..."
 cd .\frontend\
 npm install
 Start-Process npm start
+cd ..
 
