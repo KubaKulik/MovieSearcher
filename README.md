@@ -1,9 +1,9 @@
 # MovieSearcher
 
 **MovieSearcher** is a web application that allows users to search for movies based on name.
-After searching for a movie, users can see its basic information, such as title, genre and release date. 
+After searching for a movie, users can see its basic information, such as title, genre and release date.
 The application has panels for **registration**, **log-in**, **change password**. **Logout** and **find movies**.
-Movies are downloaded from an open API from **http://www.omdbapi.com**. User after registration is saved in **MySQL** databases. 
+Movies are downloaded from an open API from **http://www.omdbapi.com**. User after registration is saved in **MySQL** databases.
 The application provides security through authentication based on **JWT tokens**.
 In addition, there is a mechanism to automatically log out a user after a certain period of inactivity.
 The application is also equipped with a simple token management system,
@@ -23,9 +23,12 @@ Backend includes:
 * User login ✅.
 * User password change ✅.
 * Creation/renewal of account access token ✅.
+* Logging out of account✅.
 
 Authentication and authorization:
 * JWT ✅
+
+* Adding error handling logs to the backend save in the logs folder. ✅
 
 
 ## Installation
@@ -98,9 +101,9 @@ Project start
   npm start
 ```
 
-# Automatically Backend + Frontend 
+# Automatically Backend + run tests for backend +Frontend 
 
-**Automatic** inclusion of **backend** and **frontend** on separate windows:
+**Automatic** inclusion of **backend**, **tests** and **frontend** on separate windows:
 
 ```bash
   ./script.ps1
