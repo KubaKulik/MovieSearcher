@@ -1,9 +1,11 @@
-fastapi==0.110.3
+fastapi==0.111.0
 jose==1.0.0
 passlib==1.7.4
 pydantic==2.7.1
 PyJWT==2.8.0
 PyJWT==2.8.0
+pytest==8.0.0
 python-dotenv==1.0.1
 python_jose==3.3.0
-SQLAlchemy==2.0.25
+Requests==2.32.2
+SQLAlchemy==1.4.52
