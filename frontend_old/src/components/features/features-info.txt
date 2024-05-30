@@ -1,0 +1,1 @@
+W features znajdą się bardziej zaawansowane komponenty. Takie, które mają już jakąś konkretną logikę. To tutaj będziemy przechowywać np. komponenty do obsługi formularzy.

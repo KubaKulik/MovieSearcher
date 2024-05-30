@@ -1,0 +1,20 @@
+@import './setting.scss';
+
+*,*::before, *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.5px;
+    background-image: url('../img/homeBackground.jpg');
+    background-size: cover; /* Dopasowuje obrazek, aby pokrył cały kontener */
+    background-repeat: no-repeat; /* Zapobiega powtarzaniu obrazka */
+    color: $main-font-color;
+  }
+
+  a{
+    text-decoration: none;
+    color: $main-font-color;
+  }
