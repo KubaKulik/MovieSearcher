@@ -39,8 +39,8 @@ const Films = () => {
 
   return (
     <div className={styles.films}>
-      <h2>Wyszukaj film</h2>
       <form className={styles.filmsForm}>
+      <h2>Search Movie</h2>
         <input
           type="text"
           name="search"
@@ -48,11 +48,12 @@ const Films = () => {
           onChange={handleInput}
           onKeyPress={handleKeyPress}
         />
+        {state.searched && state.results.length === 0 && (
+          <span className={styles.noResult}>No results found...</span>
+        )}
       </form>
       <div className={styles.filmsResults}>
-        {state.searched && state.results.length === 0 && (
-          <p>No results found.</p>
-        )}
+      
         {state.results.length > 0 && ( 
           state.results.map((result, i) => (
             <FilmCard key={i} result={result} />
