@@ -14,10 +14,6 @@ which allows access tokens to be invalidated after a user logs out or after a ce
 ## .gif
 
 ![](https://github.com/KubaKulik/MovieSearcher/blob/main/application%20presentation%20gif.gif)
-
-## .mp4
-<video src='application presentation.mp4'> 
-
 # Backend
 
 <img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue"/> <img src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi"/> <img src="https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens"/> <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white"/>
