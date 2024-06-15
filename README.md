@@ -16,7 +16,7 @@ which allows access tokens to be invalidated after a user logs out or after a ce
 ![](https://github.com/KubaKulik/MovieSearcher/blob/main/application%20presentation%20gif.gif)
 
 ## .mp4
-![](https://github.com/KubaKulik/MovieSearcher/blob/main/application%20presentation.mp4)
+<video src='application presentation.mp4'> 
 
 # Backend
 
