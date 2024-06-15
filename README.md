@@ -9,7 +9,7 @@ In addition, there is a mechanism to automatically log out a user after a certai
 The application is also equipped with a simple token management system,
 which allows access tokens to be invalidated after a user logs out or after a certain amount of time has passed since they were generated.
 
-## Application presentation 
+# Application presentation 
 
 ![](https://github.com/KubaKulik/MovieSearcher/blob/main/application%20presentation%20gif.gif)
 
